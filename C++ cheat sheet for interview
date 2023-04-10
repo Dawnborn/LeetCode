@@ -97,10 +97,13 @@ unordered_map<int, string> Map;                         // O(1) or constant time
 #include<map>
 map<int, string> treeMap;                               // O(logN) time complexity
 
-Map[1] = "one";                                         // insert     equivalent to map.put(key, val)
-string str = Map[1];                                    // get        equivalent to map.get(key)
-if(Map.find(1) != Map.end()) cout << Map[1] << endl;    // search key equivalent to map.containsKey(key)
-Map.erase(1);                                           // delete     equivalent to map.remove(key)
+Map[1] = "one";                                         // insert
+Map.insert(std::make_pair(1,"one");
+string str = Map[1];                                    // get, not safe        
+if(Map.find(1) != Map.end()) cout << Map[1] << endl;    // find key equivalent to map.at(key)
+Map.erase(1);                                           // delete
+Map.empty();                                            // empty
+Map.size();
 
 unordered_map<int, string>::iterator it = Map.find(1);  // find by key
 if(iter != Map.end()) cout << iter->second; 
@@ -108,10 +111,6 @@ else cout << "not found";
 
 for(iter = Map.begin(); iter != Map.end(); ++iter)
     cout << iter->first << iter->second <<end;          // traverse
-
-Map.erase("one");                                       // delete
-Map.empty();
-Map.size();
 
 unordered_set<int> Set; 
 Set.insert(val);
